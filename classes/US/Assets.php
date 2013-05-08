@@ -185,8 +185,6 @@ class US_Assets {
 	 */
 	protected function add_file($file_name)
 	{
-		$file_name = strtolower($file_name);
-
 		if ( ! preg_match('~\.(css|js)$~', $file_name, $matches))
 		{
 			throw new Kohana_Exception('Unknown assets format: :file_name', array(
