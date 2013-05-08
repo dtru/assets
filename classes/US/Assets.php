@@ -234,7 +234,7 @@ class US_Assets {
 	/**
 	 * Output inclusions of added files.
 	 */
-	public function output()
+	public function output($indents = 2)
 	{
 		$output = array();
 
@@ -248,8 +248,7 @@ class US_Assets {
 			$output[] = HTML::script($script);
 		}
 
-		// TODO Move indents out
-		return implode("\n\t\t", $output);
+		return implode("\n".str_repeat("\t", $indents), $output);
 	}
 
 	public function remove_file($file_name)
