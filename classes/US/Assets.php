@@ -117,6 +117,7 @@ class US_Assets {
 		}
 		else
 		{
+			$this->add_file($path);
 			// TODO Add specified file by its path
 		}
 
