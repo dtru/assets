@@ -203,10 +203,6 @@ class US_Assets {
 				break;
 		}
 
-		if (Request::factory()->secure()){
-			$file_name = str_replace('http://', 'https://', $file_name);
-		}
-
 		if ( ! in_array($file_name, $container))
 		{
 			$container[] = $file_name;
