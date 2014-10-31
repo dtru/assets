@@ -102,6 +102,7 @@ class US_Assets {
 	 */
 	public function add($path)
 	{
+		var_dump($path);
 		if (strpos($path, '/') === FALSE)
 		{
 			// Add predefined file from config
@@ -201,6 +202,10 @@ class US_Assets {
 			case 'css':
 				$container = & $this->_styles;
 				break;
+		}
+
+		if (Request::factory()->secure()){
+			$file_name = str_replace('http://', 'https://', $file_name);
 		}
 
 		if ( ! in_array($file_name, $container))
