@@ -102,7 +102,6 @@ class US_Assets {
 	 */
 	public function add($path)
 	{
-		var_dump($path);
 		if (strpos($path, '/') === FALSE)
 		{
 			// Add predefined file from config
