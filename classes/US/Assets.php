@@ -10,6 +10,8 @@ class US_Assets {
 	 */
 	public static $default = 'default';
 
+	public static $nocache = false;
+
 	/**
 	 * @var array Assets instances
 	 */
@@ -236,15 +238,16 @@ class US_Assets {
 	public function output($indents = 2)
 	{
 		$output = array();
+		$cache = (self::$nocache)?'?v='.time():'';
 
 		foreach ($this->_styles as $style)
 		{
-			$output[] = HTML::style($style);
+			$output[] = HTML::style($style.$cache);
 		}
 
 		foreach ($this->_scripts as $script)
 		{
-			$output[] = HTML::script($script);
+			$output[] = HTML::script($script.$cache);
 		}
 
 		return implode("\n".str_repeat("\t", $indents), $output);
